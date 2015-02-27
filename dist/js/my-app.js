@@ -236,3 +236,16 @@ $$('.login-screen').find('.list-button').on('click', function () {
 */        
 	myApp.closeModal('.login-screen');	
 });
+
+$$('.toolbar-inner').find('.toggle-button').on('click', function (){
+  $$('body').toggleClass("layout-dark theme-red");
+  //document.getElementById("nowplayingimg").src = "img/current-inverted.png";
+
+  var src = (document.getElementById("nowplayingimg").attr("src") === "img/current.png")
+    ? "img/current-inverted.png"
+    : "img/current.png";
+  document.getElementById("nowplayingimg").attr("src", src);
+
+  console.log("saggy");
+  
+});
