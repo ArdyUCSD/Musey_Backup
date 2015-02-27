@@ -1,24 +1,49 @@
+
+<script>
+var links = [
+    "http://files.podsnack.com/iframe/embed.html?hash=a1ul7e42&t=1425006452",
+    "http://files.podsnack.com/iframe/embed.html?hash=av15rayq&t=1425006610"
+];
+var random = 0;
+function randomPlaylist() {
+    var temp = random;
+    // Make sure we do not display the same video twice in a row
+    while(temp == random) temp = Math.floor(Math.random() * links.length);
+    random = temp;
+    document.getElementById("playlist").src = links[random];
+}
+
+window.onload = randomPlaylist;
+
+</script>
 <div class="navbar">
   <div class="navbar-inner">
-    <div class="left sliding"><a href="#" class="back link"><i class="icon icon-back"></i><span>Back</span></a></div>
-    <div class="center sliding">Now Playing</div>
-    <div class="right"><a href="#" class="open-panel link icon-only"><i class="icon icon-bars"></i></a></div>
+    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">Celebratory</div>
+    <div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
   </div>
 </div>
-<div class="pages navbar-through">
-  <div data-page="media-lists" class="page">
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="mood" class="page">
+    <!-- Scrollable page content-->
     <div class="page-content">
+        <div class="list-block">
+ <!--<div class="content-block-title">Now Playing</div> -->
       <div class="content-block">
         <div class="item-media">
-          <img src="http://blogs.phoenixnewtimes.com/uponsun/magical_mystery_tour_smaller.jpg" width="70%">
+          <!--<img src="http://blogs.phoenixnewtimes.com/uponsun/magical_mystery_tour_smaller.jpg" width="50%">-->
         </div>
         <div class="item-inner">
           <div class="item-title-row">
-            <div class="item-title">All You Need is Love</div>
+            <!--<div class="item-title">All You Need is Love</div>-->
           </div>
-          <div class="item-subtitle">The Beatles</div>
-        </div>
-        <p><i class="fa fa-play"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-pause"></i>&nbsp;&nbsp;&nbsp;<i class="fa fa-fast-forward"></i></p>
+          <!--<div class="item-subtitle">The Beatles</div>-->
+<button onclick="randomPlaylist()">Random Playlist</button>
+  <iframe style="border:none" src="" id="playlist" width="800" height="800" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </ul>
       </div>
     </div>
   </div>
