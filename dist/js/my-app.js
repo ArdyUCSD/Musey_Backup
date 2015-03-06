@@ -47,6 +47,34 @@ function createContentPage() {
 	return;
 }
 
+/*var Angrylinks = [
+    "http://files.podsnack.com/iframe/embed.html?hash=av1968al&t=1424997514",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1p8v02e&t=1424996505",
+    "http://files.podsnack.com/iframe/embed.html?hash=av15rayq&t=1425006610"
+];
+var random = 0;
+
+function nextAngryPlaylist() {
+    var iframes = document.getElementsByTagName('iframe');
+    for (var i = 0; i < iframes.length; i++) {
+        if (i === 1) {
+            break;
+        }
+        iframes[i].parentNode.removeChild(iframes[i]);
+    }
+    var temp = random;
+    // Make sure we do not display the same playlist twice in a row
+    while(temp == random) temp = Math.floor(Math.random() * Angrylinks.length);
+    random = temp;
+    document.getElementById("Angryplaylist").src = Angrylinks[random];
+
+}*/
+
+function setURL(url){
+    document.getElementById('iframe').src = url;
+}
+
+
 /* ===== Login screen page events ===== */
 $$('.login-screen').find('.list-button').on('click', function () {
     var username = $$('.login-screen').find('input[name="username"]').val();

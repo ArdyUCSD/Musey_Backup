@@ -1,5 +1,5 @@
 
-<script>
+<!--<script>
 var links = [
     "http://files.podsnack.com/iframe/embed.html?hash=av1968al&t=1424997514",
     "http://files.podsnack.com/iframe/embed.html?hash=a1p8v02e&t=1424996505"
@@ -13,9 +13,9 @@ function randomPlaylist() {
     //document.getElementById("playlist").src = links[random];
 }
 
-window.onload = randomPlaylist;
+document.onclick = randomPlaylist;
 
-</script>
+</script>-->
 
 <div class="navbar">
   <div class="navbar-inner">
@@ -31,9 +31,14 @@ window.onload = randomPlaylist;
   <div data-page="mood" class="page">
     <!-- Scrollable page content-->
     <div class="page-content" style="overflow-x: scroll;">
-      
-      <iframe style="border:none" src="http://files.podsnack.com/iframe/embed.html?hash=av1968al&t=1424997514" id="playlist" width="100%" height="65%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-      
+
+            <iframe style="border:none" src="http://files.podsnack.com/iframe/embed.html?hash=av1968al&t=1424997514" id="iframe" width="100%" height="75%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            <button onclick="setURL('http://files.podsnack.com/iframe/embed.html?hash=a1p8v02e&t=1424996505'); this.style.visibility='hidden'" >Next playlist</button>
+            <!--<button onclick="nextAngryPlaylist(); this.style.visibility='hidden'">Next Playlist</button>-->
+            <!--<iframe style="border:none" src="http://files.podsnack.com/iframe/embed.html?hash=a1p8v02e&t=1424996505" id="playlist" width="100%" height="75%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>-->
+    
+    
+
         <!--div class="list-block">
       <div class="content-block">
         <div class="item-media">
