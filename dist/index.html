@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/framework7.themes.min.css">
     <link rel="stylesheet" href="css/my-app.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     
@@ -119,7 +120,7 @@
             <div class="left">
               <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
             </div>
-            <div class="center sliding">Musey</div>
+            <div class="center sliding" style="font-family: 'Lobster', sans-serif; font-size:23px;">Musey</div>
             <!--div class="right">
               <a href="weekly.html" class="link icon-only item-link"><img src="img/current.png" height="30px" class="invert"></a>
             </div-->
@@ -165,8 +166,58 @@
         <!-- Bottom Toolbar-->
         <div class="toolbar">
           <div class="toolbar-inner">
-            <a href="#" class="button">About</a>
+            <a href="#" data-popup=".about-popup" class="button open-popup" class="button">Theme</a>
             <!--a href="#" class="button open-login-screen">Sign In</a-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+   <div class="popup about-popup">
+      <div class="view navbar-fixed">
+        <div class="pages">
+          <div class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="center">Theme Musey!</div>
+                <div class="right"><a href="#" class="link close-popup">Done</a></div>
+              </div>
+            </div>
+            <div class="page-content">
+ <div class="content-block-title">Choose Layout Theme</div>
+        <div class="content-block">
+          <div class="row toggle">
+            <div data-layout="" class="col-33 layout-theme layout-default-toggle"></div>
+            <div data-theme="dark" class="col-33 layout-theme layout-dark-toggle"></div>
+            <div data-theme="white" class="col-33 layout-theme layout-white-toggle"></div>
+          </div>
+        </div>
+        
+        <div class="content-block-title">Choose Color Theme</div>
+        <div class="content-block">
+          <div class="row toggle">
+            <div data-theme="white" class="col-20 color-theme bg-white"></div>
+            <div data-theme="black" class="col-20 color-theme bg-black"></div>
+            <div data-theme="blue" class="col-20 color-theme bg-blue"></div>
+            <div data-theme="orange" class="col-20 color-theme bg-orange"></div>
+            <div data-theme="red" class="col-20 color-theme bg-red"></div>
+          </div>
+          <hr>
+          <div class="row toggle">
+            <div data-theme="pink" class="col-20 color-theme bg-pink"></div>
+            <div data-theme="green" class="col-20 color-theme bg-green"></div>
+            <div data-theme="lightblue" class="col-20 color-theme bg-lightblue"></div>
+            <div data-theme="yellow" class="col-20 color-theme bg-yellow"></div>
+            <div data-theme="gray" class="col-20 color-theme bg-gray"></div>
+          </div>
+        </div>
+        <hr>
+      <div class="content-block-title">About Musey</div>
+      <div class="content-block">
+        <p>Musey was designed from the ground up to make your music curation experience the best around.<br><br>Designed by Ardavan Amini, Arjun Iyer and Stefan Rimola.<br><br>Questions, comments or suggestions? Email us at museyapp@gmail.com</p> <!--real email address I made pw:team300isdabest-->
+      </div>
+
+            </div>
           </div>
         </div>
       </div>
