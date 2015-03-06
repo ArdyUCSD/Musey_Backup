@@ -60,17 +60,28 @@ $$('.login-screen').find('.list-button').on('click', function () {
 });
 
 /* ===== Color themes ===== */
+var body_swag = $.cookie('body_swag');
+if (body_swag) {
+  $('body').addClass(body_swag);
+};
+var color_swag = $.cookie('color_swag');
+if (color_swag) {
+  $('body').addClass(color_swag);
+}
+
 var themes = 'theme-white theme-black theme-yellow theme-red theme-blue theme-green theme-pink theme-lightblue theme-orange theme-gray';
 var layouts = 'layout-dark layout-white';    
     
 $$('.toggle').find('.color-theme').click(function () {
     $$('body').removeClass(themes).addClass('theme-' + $$(this).attr('data-theme'));
-    console.log("color");
+    $.cookie('color_swag', 'theme-' + $$(this).attr('data-theme'));
 });
 
 $$('.toggle').find('.layout-theme').click(function () {
     $$('body').removeClass(layouts).addClass('layout-' + $$(this).attr('data-theme'));
+    $.cookie('body_swag', 'layout-' + $$(this).attr('data-theme'));
 });
+
 
 /* =========== WOOPRA TRACKING CODE ============ */
 $(document).ready(function() {
@@ -99,9 +110,7 @@ function initializePage() {
 
   })
 
-}
-
-
+};
 
 
 
