@@ -1,0 +1,20 @@
+.toggle {
+  height: 30px;
+}
+
+.toggle div {
+  height: 100%;
+  border: 1px solid #aaa;
+}
+
+.layout-default-toggle {
+  background: #efeff4;
+}
+
+.layout-dark-toggle {
+  background: #222426;
+}
+
+.layout-white-toggle {
+  background: #fff;
+}

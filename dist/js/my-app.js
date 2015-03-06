@@ -47,12 +47,6 @@ function createContentPage() {
 	return;
 }
 
-
-/* ===== Pickers ===== */
-myApp.onPageInit('index', function () {
-  
-});
-
 /* ===== Login screen page events ===== */
 $$('.login-screen').find('.list-button').on('click', function () {
     var username = $$('.login-screen').find('input[name="username"]').val();
@@ -65,10 +59,17 @@ $$('.login-screen').find('.list-button').on('click', function () {
 	myApp.closeModal('.login-screen');	
 });
 
+/* ===== Color themes ===== */
+var themes = 'theme-white theme-black theme-yellow theme-red theme-blue theme-green theme-pink theme-lightblue theme-orange theme-gray';
+var layouts = 'layout-dark layout-white';    
+    
+$$('.toggle').find('.color-theme').click(function () {
+    $$('body').removeClass(themes).addClass('theme-' + $$(this).attr('data-theme'));
+    console.log("color");
+});
 
-/* ============= LIGHT/DARK SWITCHER BUTTON ========== */
-$$('.toolbar-inner').find('.toggle-button').on('click', function (){
-  $$('body').toggleClass("layout-dark theme-red");
+$$('.toggle').find('.layout-theme').click(function () {
+    $$('body').removeClass(layouts).addClass('layout-' + $$(this).attr('data-theme'));
 });
 
 /* =========== WOOPRA TRACKING CODE ============ */
