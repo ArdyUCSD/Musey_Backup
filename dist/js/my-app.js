@@ -47,31 +47,20 @@ function createContentPage() {
 	return;
 }
 
-/*var Angrylinks = [
-    "http://files.podsnack.com/iframe/embed.html?hash=av1968al&t=1424997514",
-    "http://files.podsnack.com/iframe/embed.html?hash=a1p8v02e&t=1424996505",
-    "http://files.podsnack.com/iframe/embed.html?hash=av15rayq&t=1425006610"
-];
-var random = 0;
 
-function nextAngryPlaylist() {
-    var iframes = document.getElementsByTagName('iframe');
-    for (var i = 0; i < iframes.length; i++) {
-        if (i === 1) {
-            break;
-        }
-        iframes[i].parentNode.removeChild(iframes[i]);
+
+/* For more than two playlists, add url3, url4, etc... and put right amount of links in specified html pages (order of W has to be changed
+too, so it can go in a cycle!!)  Make sure original link gets put last in setURL list so that the user sees every other playlist before 
+repeating the original*/
+var W = 0;
+function setURL(url,url2){
+    if (W == 0) {
+        document.getElementById('iframe').src = url;
+        W = 1;
+    } else {
+        document.getElementById('iframe').src = url2;
+        W = 0;
     }
-    var temp = random;
-    // Make sure we do not display the same playlist twice in a row
-    while(temp == random) temp = Math.floor(Math.random() * Angrylinks.length);
-    random = temp;
-    document.getElementById("Angryplaylist").src = Angrylinks[random];
-
-}*/
-
-function setURL(url){
-    document.getElementById('iframe').src = url;
 }
 
 
