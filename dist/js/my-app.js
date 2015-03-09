@@ -47,7 +47,54 @@ function createContentPage() {
 	return;
 }
 
+myApp.onPageInit('random', function (page) {
+    var links = [
+    "http://files.podsnack.com/iframe/embed.html?hash=a13yvqwy&t=1425852316",
+    "http://files.podsnack.com/iframe/embed.html?hash=avtmy3f5&t=1425689167",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1p8v02e&t=1424996505",
+    "http://files.podsnack.com/iframe/embed.html?hash=av1968al&t=1424997514",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1jeh6rb&t=1425007657",
+    "http://files.podsnack.com/iframe/embed.html?hash=a19yugvo&t=1425007793",
+    "http://files.podsnack.com/iframe/embed.html?hash=avp01wb6&t=1425008707",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1kax2g4&t=1425007448",
+    "http://files.podsnack.com/iframe/embed.html?hash=avz968al&t=1425003790",
+    "http://files.podsnack.com/iframe/embed.html?hash=avt3blqa&t=1425003639",
+    "http://files.podsnack.com/iframe/embed.html?hash=av15rayq&t=1425006610",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1ul7e42&t=1425006452",
+    "http://files.podsnack.com/iframe/embed.html?hash=avt8v02e&t=1425007053",
+    "http://files.podsnack.com/iframe/embed.html?hash=av7mgf0s&t=1425006870",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1j01wb6&t=1425004581",
+    "http://files.podsnack.com/iframe/embed.html?hash=avh5rayq&t=1425004399",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1hp8unk&t=1425008830",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1m2cbdr&t=1425008645",
+    "http://files.podsnack.com/iframe/embed.html?hash=avt5rayq&t=1425005646",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1cl7e42&t=1425005524",
+    "http://files.podsnack.com/iframe/embed.html?hash=avc8v02e&t=1425002799",
+    "http://files.podsnack.com/iframe/embed.html?hash=avhmgf0s&t=1425002829",
+    "http://files.podsnack.com/iframe/embed.html?hash=avpax2g4&t=1425006041",
+    "http://files.podsnack.com/iframe/embed.html?hash=avkszy6w&t=1425005855",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1pszy6w&t=1425004186",
+    "http://files.podsnack.com/iframe/embed.html?hash=avxmgf0s&t=1425004044",
+    "http://files.podsnack.com/iframe/embed.html?hash=av1iose0&t=1425005643",
+    "http://files.podsnack.com/iframe/embed.html?hash=avkl7e42&t=1425005387",
+    "http://files.podsnack.com/iframe/embed.html?hash=avhfdqwy&t=1425007489",
+    "http://files.podsnack.com/iframe/embed.html?hash=a1p01wb6&t=1425007285"
+];
+var random = 0;
+function randomPlaylist() {
+    var temp = random;
+    while (temp == random)
+    temp = Math.floor(Math.random() * links.length);
+    random = temp;
+    document.getElementById("randomPlaylist").src = links[random];
+};
+randomPlaylist();
+    
+    document.getElementById("randbutton").onclick = function() {
+        randomPlaylist();
+    };
 
+});
 
 /* For more than two playlists, add url3, url4, etc... and put right amount of links in specified html pages (order of W has to be changed
 too, so it can go in a cycle!!)  Make sure original link gets put last in setURL list so that the user sees every other playlist before 
@@ -60,8 +107,11 @@ function setURL(url,url2){
     } else {
         document.getElementById('iframe').src = url2;
         W = 0;
-    }
-}
+    };
+};
+
+
+
 
 
 /* ===== Login screen page events ===== */
